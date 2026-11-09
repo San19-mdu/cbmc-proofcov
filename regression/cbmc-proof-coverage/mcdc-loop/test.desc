@@ -1,0 +1,13 @@
+CORE
+main.c
+--proof-coverage --unwind 4 --proof-coverage-mcdc decision
+^  evaluation 2: decision false; v\[.*\] > 0 = true masked; v\[.*\] < 10 = false independent$
+^  evaluation 3: decision false; v\[.*\] > 0 = false independent; v\[.*\] < 10 not evaluated$
+^  condition outcomes covered: 4/4 .*$
+^EXIT=0$
+^SIGNAL=0$
+--
+^  evaluation 4: decision .*v\[
+--
+One evaluation per iteration; the decision on line 9 is evaluated three
+times (the fourth unwinding is not reached).

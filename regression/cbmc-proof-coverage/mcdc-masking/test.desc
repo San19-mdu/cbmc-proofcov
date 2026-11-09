@@ -1,0 +1,12 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-mcdc decision
+^  evaluation 1: decision false; a > 0 = true masked; b > 0 = false independent; c > 0 = false independent$
+^  condition outcomes covered: 2/6 \(a > 0: none, b > 0: false, c > 0: false\)$
+^MCDC: decision main.c:4#1 c1 value=0 outcome=0 independent b > 0$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+a > 0 is masked: with b > 0 false, a && b is false whatever a is. b > 0 and
+c > 0 each decide the decision on their own.

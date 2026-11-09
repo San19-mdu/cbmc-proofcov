@@ -1,0 +1,10 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-experiment --proof-coverage-track-undef
+^COVERED: 5 6 10 11 14$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+With undefinedness tracking the phi of lightOn cannot be bypassed via an
+undefined rightSwitch, so line 6 is covered, as in the Python prototype.

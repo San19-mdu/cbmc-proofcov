@@ -1,0 +1,10 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-mcdc result
+^  evaluation 1: decision true; y > 0 = true masked$
+^MC/DC condition outcomes covered: 0/2$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+Both branches set r to 1, so the assertion does not depend on y > 0.

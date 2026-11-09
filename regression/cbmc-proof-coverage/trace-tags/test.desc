@@ -1,0 +1,14 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-cores --proof-coverage-trace --proof-coverage-experiment
+^COVERED: 5 8 9 13$
+^TRACE: trace$
+^COVERED: 8 9 11 13$
+^TRACE: non-trace untaken side of the branch at line 8, line 11$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+Two minimal proofs: one follows the run (a == 1, so b = 1), the other is a
+case split over both branches and uses b = 2 on line 11, which the run never
+executes.

@@ -1,0 +1,10 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-mcdc decision
+^MC/DC: the test has more than one run \(nondeterministic inputs\?\); MC/DC needs concrete inputs$
+^EXIT=0$
+^SIGNAL=0$
+--
+evaluation 1:
+--
+MC/DC is defined for runs; with nondeterministic inputs there is no single run.

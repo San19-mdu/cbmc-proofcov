@@ -1,0 +1,14 @@
+CORE
+main.c
+--proof-coverage --unwind 4
+^Covered lines: main.c:6 main.c:9 main.c:14 main.c:15$
+^EXIT=0$
+^SIGNAL=0$
+--
+main.c:7
+--
+The early return on line 8 is merged at the end of the function under the
+path condition (loop condition on line 6 AND n % i == 0 on line 7). The proof
+uses that this condition is false. In the run it is false because the loop is
+never entered (3 < 5 / 2 fails), so only line 6 is credited: line 7 is never
+evaluated.

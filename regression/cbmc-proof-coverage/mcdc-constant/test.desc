@@ -1,0 +1,13 @@
+CORE
+main.c
+--proof-coverage --unwind 4 --proof-coverage-mcdc decision
+^main.c:6#1  n <= 1$
+^  evaluation 3: decision true; n <= 1 = true independent$
+^MC/DC condition outcomes covered: 2/2$
+^EXIT=0$
+^SIGNAL=0$
+--
+^main.c:4#
+evaluation 4:
+--
+The constant condition of while(1) is not a condition.

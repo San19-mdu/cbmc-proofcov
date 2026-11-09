@@ -1,0 +1,10 @@
+CORE
+main.c
+--proof-coverage --trace
+^Test fail: an assertion can be violated$
+^Violated property:$
+^EXIT=10$
+^SIGNAL=0$
+--
+^\*\* Proof core
+--

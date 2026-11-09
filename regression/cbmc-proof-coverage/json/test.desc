@@ -1,0 +1,11 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-branch --json-ui
+"proofCoverage": \{
+"lineCoverage": \{
+"constraints": \[
+"line4\.0",
+^EXIT=0$
+^SIGNAL=0$
+--
+--

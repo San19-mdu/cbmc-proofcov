@@ -1,0 +1,15 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-cores --proof-coverage-verify
+^proof 1 verified$
+^proof 2 verified$
+^Proof cores found: 2$
+^EXIT=0$
+^SIGNAL=0$
+--
+not minimal
+is satisfiable
+--
+Every enumerated proof is re-checked: unsatisfiable, and satisfiable without
+any one of its soft constraints. See unit/goto-checker/proof_coverage for the
+regression test of the shrink() aliasing bug that produced non-minimal cores.

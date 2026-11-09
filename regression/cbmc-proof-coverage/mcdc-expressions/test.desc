@@ -1,0 +1,19 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-mcdc decision
+^main.c:4#1  c > 0$
+^main.c:4#2  a > 1 \|\| b > 1$
+^  evaluation 1: decision false; a > 1 = false independent; b > 1 = false independent$
+^main.c:7#1  t != 0 \|\| c > 5$
+^main.c:7#2  b > 3$
+^main.c:8#1  \(a > 0 \|\| b > 0\) && c != 3$
+^  evaluation 1: decision true; a > 0 = true independent; b > 0 not evaluated; c != 3 = true independent$
+^EXIT=0$
+^SIGNAL=0$
+--
+^main.c:4#3
+^main.c:6#1
+--
+Decisions in assignments, in ?: and in a return are decisions; several on one
+line are numbered. a < 0 && b < 0 (the ?: arm not taken) and the assignment in
+the branch not taken are not evaluated, so they are not reported.

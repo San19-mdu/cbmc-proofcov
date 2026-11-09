@@ -493,6 +493,9 @@ void cbmc_parse_optionst::get_command_line_options(optionst &options)
   }
 
   parse_solver_options(cmdline, options);
+
+  // after the solver options, as it overrides some of them
+  parse_proof_coverage_options(cmdline, options);
 }
 
 /// invoke main modules
@@ -696,6 +699,12 @@ int cbmc_parse_optionst::doit()
     }
 
     return CPROVER_EXIT_SUCCESS;
+  }
+
+  if(options.get_bool_option("proof-coverage"))
+  {
+    proof_coverage_checkert checker(options, ui_message_handler, goto_model);
+    return checker.run();
   }
 
   if(options.is_set("cover"))
@@ -1034,6 +1043,9 @@ void cbmc_parse_optionst::help()
     " {y--stop-on-fail} \t stop analysis once a failed property is detected"
     " (implies {y--trace})\n"
     " {y--localize-faults} \t localize faults (experimental)\n"
+    "\n"
+    "Proof coverage options:\n"
+    HELP_PROOF_COVERAGE
     "\n"
     "C/C++ frontend options:\n"
     " {y--preprocess} \t stop after preprocessing\n"

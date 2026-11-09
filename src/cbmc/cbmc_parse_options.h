@@ -23,6 +23,7 @@ Author: Daniel Kroening, kroening@kroening.com
 #include <ansi-c/ansi_c_language.h>
 #include <ansi-c/goto-conversion/goto_check_c.h>
 #include <goto-checker/bmc_util.h>
+#include <goto-checker/proof_coverage_checker.h>
 #include <goto-instrument/cover.h>
 #include <json/json_interface.h>
 #include <langapi/language.h>
@@ -67,6 +68,7 @@ class optionst;
   "(arrays-uf-always)(arrays-uf-never)" \
   OPT_FLUSH \
   "(localize-faults)" \
+  OPT_PROOF_COVERAGE \
   OPT_GOTO_TRACE \
   OPT_VALIDATE \
   OPT_ANSI_C_LANGUAGE \

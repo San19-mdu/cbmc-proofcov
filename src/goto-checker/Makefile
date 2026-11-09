@@ -10,6 +10,10 @@ SRC = bmc_util.cpp \
       multi_path_symex_checker.cpp \
       multi_path_symex_only_checker.cpp \
       properties.cpp \
+      proof_coverage_checker.cpp \
+      proof_coverage_mcdc.cpp \
+      proof_coverage_mus.cpp \
+      proof_coverage_report.cpp \
       report_util.cpp \
       single_loop_incremental_symex_checker.cpp \
       single_path_symex_checker.cpp \

@@ -1,0 +1,14 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-cores --proof-coverage-trace --proof-coverage-experiment
+^COVERED: 10 12 13 16$
+^TRACE: trace$
+^COVERED: 3 4 12 13 15 16$
+^TRACE: non-trace untaken side of the branch at line 3, line 4, untaken side of the branch at line 12, line 15$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+The call of h on line 15 is never made. The merge inside h is reached only
+through that call, so a proof that uses it is non-trace, although h's own
+condition (3 > 2) holds.

@@ -1,0 +1,11 @@
+CORE
+main.c
+--proof-coverage --unwind 4
+^Covered lines: main.c:6 main.c:7 main.c:9 main.c:16 main.c:17$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+As early-exit-not-taken, but with n either 5 or 7: the branch conditions
+do not have unique values (n % 5 == 0 differs), so a not-taken merge is
+credited to every condition on its path, line 7 included.

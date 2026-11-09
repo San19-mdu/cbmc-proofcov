@@ -1,0 +1,13 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-experiment
+^COVERED: 3 4 10 11 19$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+The condition on line 10 calls h, so goto conversion evaluates it into a
+temporary (tmp_if_expr) before branching. The run returns on line 11, so line
+12 is never reached. The merge of the return values mentions line 12's guard
+and the temporary; it is credited to the temporary's line (10), where the run
+left the path, not to line 12.

@@ -1,0 +1,10 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-mcdc decision
+^  evaluation 1: decision true; y > 0 = true independent$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+y > 0 decides which branch runs (decision mode), see test-result.desc for
+its influence on the assertion.

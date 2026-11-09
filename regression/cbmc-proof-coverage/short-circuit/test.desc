@@ -1,0 +1,10 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-experiment
+^COVERED: 5 10 11 14$
+^EXIT=0$
+^SIGNAL=0$
+--
+--
+Only one operand of || is needed: rightSwitch (line 6) and the initial value
+of lightOn (line 8) are not covered.

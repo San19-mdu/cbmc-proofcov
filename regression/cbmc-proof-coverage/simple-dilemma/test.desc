@@ -1,0 +1,13 @@
+CORE
+main.c
+--proof-coverage --proof-coverage-branch
+^Covered lines: main.c:4 main.c:6 main.c:10$
+^Line coverage: 3/4 \(75.00%\)$
+^Branch coverage: 0/1 \(0.00%\)$
+^EXIT=0$
+^SIGNAL=0$
+--
+main.c:7
+--
+The assignment in the never-taken branch is not needed for the proof, but
+the branch condition is (the phi at the join depends on it).
